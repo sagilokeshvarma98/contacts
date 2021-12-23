@@ -1,0 +1,10 @@
+.navbar {
+    background-color: rgb(255, 157, 44);
+}
+
+.navBrand {
+    font-size: x-large;
+    padding-left: 10px;
+    color: rgb(239, 239, 240);
+    font-family: monospace;
+}

@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="imageUpload" [ngStyle]="backGroundStyle">
+                            <label for="file-upload" class="custom-file-upload">
+                                +
+                            </label>
+                        </div>
+                        <input id="file-upload" type="file" #file (change)="printPhoto(file.files)" />
+                        {{message}}
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="saveBtn" style="float: right;">
+                        <button class="btn bg-light btn-outline-secondary text-success" [disabled]="contactForm.invalid"
+                            (click)="saveContact(contactForm.value)">SAVE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <form #contactForm="ngForm">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-1">
+                            <i class="fa fa-user-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-5">
+                            <input type="text" placeholder="FIRST NAME" ngModel class="form-control" name="firstname"
+                                #firstname="ngModel" minlength="3" required [class.redInp]="firstname.invalid && firstname.touched" />
+                                <p class="text-danger" *ngIf="firstname.invalid && firstname.touched">Please enter minimum of 3 characters</p>
+                        </div>
+                        <div class="col-5">
+                            <input type="text" class="form-control" ngModel placeholder="LAST NAME" name="lastname"
+                                #lastname="ngModel" minlength="3" required [class.redInp]="lastname.invalid && lastname.touched" />
+                                <p class="text-danger" *ngIf="lastname.invalid && lastname.touched">Please enter minimum of 3 characters</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-1">
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-5">
+                            <input type="email" class="form-control" ngModel placeholder="EMAIL" name="email"
+                                #email="ngModel" required [class.redInp]="email.invalid && email.touched" />
+                                <p class="text-danger" *ngIf="email.invalid && email.touched">Please enter a valid email</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-1">
+                            <i class="fa fa-phone" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-5">
+                            <input type="email" class="form-control" ngModel placeholder="PHONE NUMBER" name="text"
+                                #text="ngModel" required [class.redInp]="text.invalid && text.touched" />
+                                <p class="text-danger" *ngIf="text.invalid && text.touched">Please enter a valid number</p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

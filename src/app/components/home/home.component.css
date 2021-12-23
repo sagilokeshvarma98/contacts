@@ -1,0 +1,22 @@
+a:first-of-type {
+    text-decoration: none;
+    font-size: larger;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    color: blueviolet;
+    margin-right: 20%
+}
+
+a {
+    text-decoration: none;
+    font-size: larger;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    color: brown;
+}
+
+a:hover{
+    color: black;
+    width: fit-content;
+    text-decoration: 1px solid violet underline;
+}

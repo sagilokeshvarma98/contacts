@@ -1,0 +1,66 @@
+<div class="container-fluid">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Phone Number</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th colspan="2">
+                    <input type="text" placeholder="Search" #searchKey (input)="searchKeyWord = searchKey.value">
+                </th>
+            </tr>
+        </thead>
+        <tbody *ngIf="contacts.length > 0">
+            <tr *ngFor="let contact of contacts | search : searchKeyWord">
+                <th scope="row" >
+                  <img *ngIf="contact.image" src={{contact.image}} alt="">  +91-{{contact.text}}
+                </th>
+                <td>{{contact.firstname}}</td>
+                <td>{{contact.lastname}}</td>
+                <td>{{contact.email}}</td>
+                <td>
+                    <i class="fa fa-pencil text-warning" aria-hidden="true" data-target="#editModal" data-toggle="modal"
+                        (click)="editObj = contact"></i>
+                </td>
+                <td>
+                    <i class="fa fa-trash-o text-danger" aria-hidden="true" (click)="deleteContact(contact.id)"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<ng-container *ngIf="contacts.length == 0">
+    <app-no-contacts></app-no-contacts>
+</ng-container>
+<div class="modal fade" id="editModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header h5 text-primary">
+                <div class="text-center">
+                    EDIT CONTACT
+                </div>
+            </div>
+            <div class="modal-body">
+                <form #editForm="ngForm">
+                    <div class="form-group">
+                        <input type="text" name="firstname" ngModel={{editObj.firstname}} class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="lastname" ngModel={{editObj.lastname}} class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="email" ngModel={{editObj.email}} class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="text" ngModel={{editObj.text}} class="form-control">
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-outline-warning" (click)="updateContact(editForm.value)"
+                            data-dismiss="modal">UPDATE</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
