@@ -21,10 +21,12 @@
                 <td>{{contact.email}}</td>
                 <td>
                     <i class="fa fa-pencil text-warning" aria-hidden="true" data-target="#editModal" data-toggle="modal"
-                        (click)="editObj = contact"></i>
+                        (click)="editObj = contact">edit</i>
                 </td>
                 <td>
-                    <i class="fa fa-trash-o text-danger" aria-hidden="true" (click)="deleteContact(contact.id)"></i>
+                    <i class="fa fa-trash-o text-danger" aria-hidden="true" (click)="deleteContact(contact.id)">
+                        delete
+                    </i>
                 </td>
             </tr>
         </tbody>

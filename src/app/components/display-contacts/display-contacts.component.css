@@ -5,3 +5,7 @@ tbody img {
     background-color: white;
     border-radius: 50%;
 }
+
+i:hover {
+    cursor: context-menu;
+}
