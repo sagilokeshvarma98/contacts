@@ -12,8 +12,8 @@ export class AddContactComponent {
 
   constructor(private _cntSer:ContactService, private route:Router) { }
 
-  public src: string | ArrayBuffer | null = ""
-  public message: string = "";
+  public src: string | ArrayBuffer | null = ''
+  public message: string = '';
   backGroundStyle:IBackgroundStyle = {
     backgroundImage: ''
   }
@@ -24,10 +24,10 @@ export class AddContactComponent {
  
     var mimeType = files[0].type;
     if (mimeType.match(/image\/*/) == null) {
-      this.message = "Only images are supported.";
+      this.message = 'Only images are supported.';
       return;
     }
-    else  this.message = ""
+    else  this.message = ''
  
     var reader = new FileReader();
     reader.readAsDataURL(files[0]); 
@@ -41,7 +41,7 @@ export class AddContactComponent {
   saveContact(addCnt:any) {
     addCnt.image = this.src;
     this._cntSer.postContact(addCnt).subscribe(res=>{
-      this.src = "";
+      this.src = '';
       this.route.navigate([''])
     })
   }

@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 import { AddContactComponent } from './components/add-contact/add-contact.component';
 import { NoContactsComponent } from './components/no-contacts/no-contacts.component';
 import { DisplayContactsComponent } from './components/display-contacts/display-contacts.component';

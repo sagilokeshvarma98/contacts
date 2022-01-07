@@ -3,19 +3,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddContactComponent } from './components/add-contact/add-contact.component';
 import { DisplayContactsComponent } from './components/display-contacts/display-contacts.component';
 import { HomeComponent } from './components/home/home.component';
-import { NoContactsComponent } from './components/no-contacts/no-contacts.component';
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: HomeComponent,
     children: [
       {
-        path:"",
+        path:'',
         component: DisplayContactsComponent
       },
       {
-        path: "addContact",
+        path: 'addContact',
         component: AddContactComponent
       }
     ]

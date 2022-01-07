@@ -15,14 +15,14 @@ export class DisplayContactsComponent implements OnInit {
   public contacts:IContact[] = [];
   public editObj:IContact = {
     id: 0 ,
-    firstname: "",
-    lastname: "",
-    image: "",
-    text: "",
-    email: ""
+    firstname: '',
+    lastname: '',
+    image: '',
+    text: '',
+    email: ''
   }
   
-  public searchKeyWord:string = ""
+  public searchKeyWord:string = ''
 
   ngOnInit(): void {
     this.getContacts();
@@ -30,19 +30,18 @@ export class DisplayContactsComponent implements OnInit {
   
   getContacts() {
     this._CS.getContacts().subscribe((res:any)=>{
-      this.contacts = res
-      console.log(this.contacts);
+      this.contacts = res;
     })  
   }
 
   updateContact(updObj:any){
     updObj.id = this.editObj.id;
     updObj.image = this.editObj.image;
-    this._CS.putContact(updObj).subscribe(()=>this.getContacts())
+    this._CS.putContact(updObj).subscribe(()=>this.getContacts());
   }
 
   deleteContact(id:number) {
-    this._CS.deleteContact(id).subscribe(()=>this.getContacts())
+    this._CS.deleteContact(id).subscribe(()=>this.getContacts());
   }
 
   searchContact(key:string) {
