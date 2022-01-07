@@ -37,6 +37,7 @@ export class DisplayContactsComponent implements OnInit {
 
   updateContact(updObj:any){
     updObj.id = this.editObj.id;
+    updObj.image = this.editObj.image;
     this._CS.putContact(updObj).subscribe(()=>this.getContacts())
   }
 
