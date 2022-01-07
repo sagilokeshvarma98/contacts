@@ -10,7 +10,6 @@ import { ContactService } from 'src/app/services/contact.service';
 })
 export class AddContactComponent {
 
-  
   constructor(private _cntSer:ContactService, private route:Router) { }
 
   public src: string | ArrayBuffer | null = ""
